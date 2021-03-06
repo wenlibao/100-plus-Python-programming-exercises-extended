@@ -184,6 +184,29 @@ patterns = [r"[a-z]", r"[A-Z]", r"[0-9]", r"[$|#|@]"]
 print(multiple(patterns, x))
 ```
 
+**OR**
+password=input("Please enter your passwords separated by comma\n").split(",")
+valid=[]
+up,lw,ca,length,num=0,0,0,0,0
+
+def char(st):
+    if st=="$"or st=="#" or st=="@":
+        return True
+    else:
+        return False
+  
+for i in password:
+    up=sum(map(str.isupper,i))
+    lw=sum(map(str.islower,i))
+    ca=sum(map(char,i))
+    num=sum(map(str.isnumeric,i))
+    length=len(i)
+    if up>=1 and lw>=1 and ca>=1 and num >=1 and length <=12 and length >=6:
+        valid.append(i)
+
+print(valid)
+
+
 ---
 
 # Question 19
